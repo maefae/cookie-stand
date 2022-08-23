@@ -1,3 +1,73 @@
 html {
 font-family: 'Raleway', sans-serif;
+color: black;
 }
+
+body {
+    background color: antiquewhite;
+}
+
+h1,
+h2,
+h4
+{
+  color: rgb(17, 159, 159);
+}
+
+h1 {
+  font-size: large;
+  margin-bottom: 5px;
+}
+
+h4 {
+    font-weight: medium;
+    margin-bottom: 10px;
+  }
+
+header {
+    background-color: rgb(28, 164, 162);
+    margin-bottom: 30px;
+  }
+  
+  header nav {
+    height: 100px;
+    margin: auto;
+    font-family: 'Raleway';
+  }
+
+  header nav ul {
+    width: 960px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 15px;
+  }
+
+  main {
+    width: 960px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  
+  p {
+    border-style: none;
+    font-style: italic;
+    flex: 1;
+    overflow-y: scroll;
+    margin-bottom: 5px;
+  }
+  
+  footer {
+    margin-top: 30px;
+    background-color: rgb(28, 164, 162);
+    height: 130px;
+  }
+  
+  footer p {
+    padding-top: 20px;
+  }
+  
