@@ -15,7 +15,7 @@ let seattle = {
 },
 
 //for loop within a function that iterates storeHours array. Random number between min and max multiply it by average and push it into an array for hourly sales
-getCookiePerHour: function () {
+  getCookiePerHour: function () {
     for (let i = 0; i < storeHours.length; i++)
     // for (let i = 0; i < 14;i++)
     {
@@ -43,7 +43,7 @@ getCookiePerHour: function () {
     let total = document.createElement('li');
     total.textContent = `Total: ${this.totalDailyCookies} cookies`;
     displaySeattle.appendChild(total);
-}
+  }
 };
 
 
@@ -57,7 +57,7 @@ let tokyo = {
 
   getRandomCustomers: function () {
     return Math.floor(Math.random() * (this.maxCustomerPerHour - this.minCustomerPerHour + 1) + this.minCustomerPerHour);
-},
+  },
 
   getCookiePerHour: function () {
     for (let i = 0; i < storeHours.length; i++) {
@@ -68,7 +68,7 @@ let tokyo = {
       console.log(`The ${this.location} store had ${customerPerHour} customers during this hour and sold a total of ${totalCookiesSold} cookies.`);
       console.log(this.cookiesPerHour);
     }
-},
+  },
 
   display: function () {
     this.getCookiePerHour();
@@ -137,7 +137,7 @@ let paris = {
     return Math.floor(Math.random() * (this.maxCustomerPerHour - this.minCustomerPerHour + 1) + this.minCustomerPerHour);
 },
 
-getCookiePerHour: function () {
+  getCookiePerHour: function () {
     for (let i = 0; i < storeHours.length; i++) {
       let customerPerHour = this.getRandomCustomers();
       let totalCookiesSold = Math.ceil(customerPerHour * this.avgCookiePerCustomer);
@@ -148,7 +148,7 @@ getCookiePerHour: function () {
     }
 },
 
-display: function () {
+  display: function () {
     this.getCookiePerHour();
     let displayParis = document.getElementById(this.location);
     for (let i = 0; i < storeHours.length; i++) {
@@ -165,7 +165,7 @@ display: function () {
 
 
 let lima = {
-location: 'Lima',
+  location: 'Lima',
   minCustomerPerHour: 2,
   maxCustomerPerHour: 16,
   avgCookiePerCustomer: 4.6,
@@ -176,7 +176,7 @@ location: 'Lima',
     return Math.floor(Math.random() * (this.maxCustomerPerHour - this.minCustomerPerHour + 1) + this.minCustomerPerHour);
 },
 
-getCookiePerHour: function () {
+  getCookiePerHour: function () {
     for (let i = 0; i < storeHours.length; i++) {
       let customerPerHour = this.getRandomCustomers();
       let totalCookiesSold = Math.ceil(customerPerHour * this.avgCookiePerCustomer);
@@ -188,7 +188,7 @@ getCookiePerHour: function () {
 },
 
   display: function () {
-    this.geteCookiePerHour();
+    this.getCookiePerHour();
     let displayLima = document.getElementById(this.location);
     for (let i = 0; i < storeHours.length; i++) {
       let entry = document.createElement('li');
