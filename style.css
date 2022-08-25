@@ -1,7 +1,8 @@
 html {
-font-family: 'Raleway', sans-serif;
+font-family: 'josefin', sans-serif;
 color: black;
 background-color: rgb(255, 230, 196);
+margin-left: 1%;
 }
 
 header {
@@ -13,7 +14,8 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 20px;
+  padding-right: 3%;
+  padding-left: 3%;
   padding-top: 15px; 
   font-size: 30px;
 }
@@ -23,7 +25,7 @@ h1, h2 {
 }
 
 main {
-  width: 250px;
+  width: 700px;
   margin: auto;
 }
 
@@ -40,3 +42,39 @@ footer p {
   padding-top: 75px;
   padding-left: 5px;
 }    
+
+th,
+td {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(202, 125, 31, 0.818);
+  color: white;
+}
+
+td {
+  text-align: right;
+}
+
+.family{
+  margin-left: 25%;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+img {
+  border-radius: 20px;
+}
+
+img.chinook {
+  display:flex;
+}
+
+.images {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  
+}
