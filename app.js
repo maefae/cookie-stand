@@ -65,7 +65,7 @@ let headRow = function () {
     tr.appendChild(td);
   }
   let td = document.createElement('td');
-  td.textContent = ('Total');
+  td.textContent = ('Daily Location Total');
   tr.appendChild(td);
 };
 
