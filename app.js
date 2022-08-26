@@ -1,5 +1,6 @@
 'use strict';
 
+let grandTotal = 0;
 let storeHours = ["6am", "7am", '8am', '9am', '10am', "11am", "12am", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"];
 
 function Store (location, minCustomerPerHour, maxCustomerPerHour, avgCookiePerCustomer) {
@@ -9,6 +10,7 @@ function Store (location, minCustomerPerHour, maxCustomerPerHour, avgCookiePerCu
   this.avgCookiePerCustomer = avgCookiePerCustomer;
   this.cookiesPerHour = [];
   this.totalDailyCookies = 0;
+  allStores.push(this);
   this.display();
 }
 
@@ -46,7 +48,6 @@ Store.prototype.display = function () {
   tr.appendChild(td);
 };
 
-
 let headRow = function () {
   let tableBody = document.getElementById('data');
   let thead = document.createElement('thead');
@@ -71,12 +72,59 @@ let headRow = function () {
 
 headRow();
 
+let allStores = [];
 new Store('Seattle', 23, 65, 6.3);
 new Store('Tokyo', 3, 24, 1.2);
 new Store('Dubai', 11, 38, 3.7);
 new Store('Paris', 20, 38, 2.3);
 new Store('Lima', 2, 16, 4.6);
+console.log(allStores);
 
+let footRow = function () {
+  let tableBody = document.getElementById('data');
+  let tfoot = document.createElement('tfoot');
+  tableBody.appendChild(tfoot);
+
+  let tr = document.createElement('tr');
+  tfoot.appendChild(tr);
+
+  let th = document.createElement('th');
+  th.textContent = 'Total';
+  tr.appendChild(th);
+
+  for (let i = 0; i < storeHours.length; i++) {
+    let totalPerDayAtEachHour = 0;
+
+    for (let j = 0; j < allStores.length; j++) {
+      let oneHour = allStores[j].cookiesPerHour[i];
+      totalPerDayAtEachHour = totalPerDayAtEachHour + oneHour;
+      grandTotal += totalPerDayAtEachHour;
+    }
+    console.log(totalPerDayAtEachHour);
+    let td = document.createElement('td');
+    td.textContent = totalPerDayAtEachHour;
+    tr.appendChild(td);
+  }
+  // console.log(grandTotal);
+  let td = document.createElement('td');
+  td.textContent = grandTotal;
+  tr.appendChild(td); 
+}
+footRow();
+
+let formEl = document.getElementById('addStore-Form');
+
+formEl.addEventListener('submit', function(event) {
+  event.preventDefault();
+  let newLocation = event.target.location.value;
+  let minCust = event.target.minCust.value;
+  let maxCust = event.target.maxCust.value;
+  let avgCust = event.target.avgCust.value;
+  console.log('form submitted')
+  let thing = new Store(newLocation, minCust, maxCust, avgCust);
+  console.log(thing);
+});
+//can this code be dryer by adding it to the new Store invocations above?
 
 // let seattle = {
 //   location:'Seattle',
