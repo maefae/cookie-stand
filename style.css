@@ -4,6 +4,7 @@ html {
   color: black;
   background-color: rgb(255, 230, 196);
   margin-left: 1%;
+  color: rgb(17, 159, 159);
   }
   
   header {
@@ -21,7 +22,7 @@ html {
     font-size: 30px;
   }
   
-  h1, h2 {
+  h1, h2, h5 {
     color: rgb(17, 159, 159);
   }
   
@@ -55,7 +56,7 @@ td {
   border-color: black;
   border-width: 1px;
   padding: 5px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgba(202, 125, 31, 0.818);
   color: white;
 }
@@ -114,7 +115,6 @@ section li {
   flex: 1;
 }
 
-
 figure img {
   object-fit: contain;
   border-radius: 25px;
@@ -127,6 +127,8 @@ p {
   flex: 1;
   overflow-y: scroll;
   margin-bottom: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:rgba(119, 68, 5, 0.818);
 }
 
 fieldset {
@@ -156,3 +158,4 @@ form button {
   justify-content: space-between;
   align-items: center;
 }
+
